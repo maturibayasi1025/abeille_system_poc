@@ -39,11 +39,11 @@ interface ReservationFormProps {
 
 // Mock menu items for demo
 const mockMenuItems = [
-  { id: '1', name: 'カット', duration: 45, price: 4000 },
-  { id: '2', name: 'カラー', duration: 90, price: 7000 },
-  { id: '3', name: 'パーマ', duration: 120, price: 8000 },
-  { id: '4', name: 'トリートメント', duration: 30, price: 3000 },
-  { id: '5', name: 'ヘッドスパ', duration: 45, price: 4000 },
+  { id: '1', name: 'カット', category: 'ヘア', duration: 45, price: 4000 },
+  { id: '2', name: 'カラー', category: 'ヘア', duration: 90, price: 7000 },
+  { id: '3', name: 'パーマ', category: 'ヘア', duration: 120, price: 8000 },
+  { id: '4', name: 'トリートメント', category: 'ケア', duration: 30, price: 3000 },
+  { id: '5', name: 'ヘッドスパ', category: 'ケア', duration: 45, price: 4000 },
 ]
 
 export function ReservationForm({ reservationId, onClose, defaultDate }: ReservationFormProps) {

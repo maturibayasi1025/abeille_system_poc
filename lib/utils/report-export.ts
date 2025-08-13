@@ -15,9 +15,9 @@ const addJapaneseText = (pdf: jsPDF, text: string, x: number, y: number, options
   
   pdf.setFontSize(fontSize)
   if (fontWeight === 'bold') {
-    pdf.setFont(undefined, 'bold')
+    pdf.setFont('helvetica', 'bold')
   } else {
-    pdf.setFont(undefined, 'normal')
+    pdf.setFont('helvetica', 'normal')
   }
   
   pdf.text(text, x, y, { align })

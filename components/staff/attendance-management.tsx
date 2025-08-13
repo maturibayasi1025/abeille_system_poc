@@ -49,8 +49,8 @@ export function AttendanceManagement() {
           const isAbsent = Math.random() < 0.02 // 2%の確率で欠勤
           
           let status: AttendanceRecord['status'] = 'present'
-          let checkIn = baseCheckIn
-          let checkOut = baseCheckOut
+          let checkIn: Date | undefined = baseCheckIn
+          let checkOut: Date | undefined = baseCheckOut
           
           if (isAbsent) {
             status = 'absent'

@@ -319,7 +319,7 @@ export default function AnalyticsPage() {
         </Button>
       </div>
       
-      <Tabs value={activeTab} onValueChange={(value: AnalyticsTab) => setActiveTab(value)}>
+      <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as AnalyticsTab)}>
         <TabsList className="grid w-full grid-cols-4">
           <TabsTrigger value="overview">概要</TabsTrigger>
           <TabsTrigger value="customer">顧客分析</TabsTrigger>

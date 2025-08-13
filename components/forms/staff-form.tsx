@@ -21,7 +21,7 @@ const staffSchema = z.object({
   phone: z.string().min(1, '電話番号は必須です'),
   role: z.enum(['admin', 'manager', 'staff', 'trainee']),
   hireDate: z.string().min(1, '入社日は必須です'),
-  isActive: z.boolean().default(true),
+  isActive: z.boolean(),
 })
 
 type StaffFormData = z.infer<typeof staffSchema>
@@ -52,7 +52,7 @@ const skillLevels = [
 ]
 
 export function StaffForm({ staffId, onClose }: StaffFormProps) {
-  const [skills, setSkills] = useState<Array<{ id: string; name: string; level: string }>>([])
+  const [skills, setSkills] = useState<Array<{ id: string; name: string; level: 'beginner' | 'intermediate' | 'advanced' | 'expert' }>>([])
   const [loading, setLoading] = useState(false)
   
   const { staff, addStaff, updateStaff, getStaff } = useStaffStore()
@@ -111,7 +111,7 @@ export function StaffForm({ staffId, onClose }: StaffFormProps) {
   
   const addSkill = (skillId: string, skillName: string) => {
     if (!skills.find(s => s.id === skillId)) {
-      setSkills([...skills, { id: skillId, name: skillName, level: 'beginner' }])
+      setSkills([...skills, { id: skillId, name: skillName, level: 'beginner' as const }])
     }
   }
   
@@ -121,7 +121,7 @@ export function StaffForm({ staffId, onClose }: StaffFormProps) {
   
   const updateSkillLevel = (skillId: string, level: string) => {
     setSkills(skills.map(s => 
-      s.id === skillId ? { ...s, level } : s
+      s.id === skillId ? { ...s, level: level as 'beginner' | 'intermediate' | 'advanced' | 'expert' } : s
     ))
   }
   
