@@ -9,7 +9,10 @@
       "Bash(npx shadcn@latest add:*)",
       "Bash(npm run dev:*)",
       "Bash(cp:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(mv:*)",
+      "Bash(ls:*)",
+      "Bash(rm:*)"
     ],
     "deny": [],
     "ask": []
